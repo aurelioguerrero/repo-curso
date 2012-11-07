@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Prueba de Objetos en Javascript</title>
+<script language="javascript">
+	function persona(nombrePersona, apellidoPersona)
+	{
+		this.nombre = nombrePersona;
+		this.apellido = apellidoPersona;
+		this.saludar = funcSaludar;
+		function funcSaludar()
+		{
+			alert("Hola, mi nombre es "+this.nombre+" "+this.apellido);
+		}
+	}
+	var nombrePersona = prompt("Mi nombre: ","");
+	var apellidoPersona = prompt("Mi apellido: ","");
+	var nuevaPersona = new persona(nombrePersona,apellidoPersona);
+	nuevaPersona.saludar();
+</script>
+</head>
+
+<body>
+</body>
+</html>
