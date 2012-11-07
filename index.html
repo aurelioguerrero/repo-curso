@@ -4,6 +4,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Prueba de Objetos en Javascript</title>
 <script language="javascript">
+function iniciar()
+{
 	function persona(nombrePersona, apellidoPersona)
 	{
 		this.nombre = nombrePersona;
@@ -18,9 +20,10 @@
 	var apellidoPersona = prompt("Mi apellido: ","");
 	var nuevaPersona = new persona(nombrePersona,apellidoPersona);
 	nuevaPersona.saludar();
+}
 </script>
 </head>
 
-<body>
+<body onload="iniciar()">
 </body>
 </html>
