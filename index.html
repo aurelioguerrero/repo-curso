@@ -2,29 +2,32 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Prueba de Objetos en Javascript</title>
-<script language="javascript">
-function iniciar()
+<title>Prueba de Captura de Errores</title>
+<script>
+function validar()
 {
-	function persona(nombrePersona, apellidoPersona)
-	{
-		this.nombre = nombrePersona;
-		this.apellido = apellidoPersona;
-		this.saludar = funcSaludar;
-		function funcSaludar()
-		{
-			alert("Hola, mi nombre es "+this.nombre+" "+this.apellido);
-		}
+	try
+	{ 
+		var x=document.getElementById("valor").value;
+		if(x=="")    throw "no hay valor!";
+		if(isNaN(x)) throw "no es un numero!";
+		if(x>10)     throw "mayor a 10!";
+		if(x<5)      throw "menor a 5!";
 	}
-	var nombrePersona = prompt("Mi nombre: ","");
-	var apellidoPersona = prompt("Mi apellido: ","");
-	var nuevaPersona = new persona(nombrePersona,apellidoPersona);
-	nuevaPersona.saludar();
+	catch(err)
+	{
+		var y=document.getElementById("mensaje");
+		y.innerHTML="Error: " + err + ".";
+	}
 }
 </script>
 </head>
 
 <body>
-	<input type="button" onclick="iniciar()" value="Iniciar" />
+<h1>Prueba de Captura de Errores</h1>
+<p>Ingrese un numero entre 5 y 10:</p>
+<input id="valor" type="text">
+<button type="button" onclick="validar()">Validar</button>
+<p id="mensaje"></p>
 </body>
 </html>
