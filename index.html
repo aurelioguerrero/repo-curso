@@ -2,32 +2,71 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Prueba de Captura de Errores</title>
-<script>
-function validar()
-{
-	try
-	{ 
-		var x=document.getElementById("valor").value;
-		if(x=="")    throw "no hay valor!";
-		if(isNaN(x)) throw "no es un numero!";
-		if(x>10)     throw "mayor a 10!";
-		if(x<5)      throw "menor a 5!";
-	}
-	catch(err)
-	{
-		var y=document.getElementById("mensaje");
-		y.innerHTML="Error: " + err + ".";
-	}
-}
-</script>
+<title>Documento sin título</title>
 </head>
 
 <body>
-<h1>Prueba de Captura de Errores</h1>
-<p>Ingrese un numero entre 5 y 10:</p>
-<input id="valor" type="text">
-<button type="button" onclick="validar()">Validar</button>
-<p id="mensaje"></p>
+<table border="0">
+	<tr>
+    	<th colspan="2">FORMULARIO DE INSCRIPCION</td>
+    </tr>
+	<tr>
+    	<td>Nombre</td>
+        <td><input type="text" /></td>
+    </tr>
+    <tr>
+    	<td>Login</td>
+        <td><input type="text" /></td>
+    </tr>
+    <tr>
+    	<td>Contraseña</td>
+        <td><input type="password" /></td>
+    </tr>
+    <tr>
+    	<td>Ciudad</td>
+        <td>
+        	<select>
+            	<option value="Armenia">Armenia</option>
+                <option value="Bucaramanga">Bucaramanga</option>
+                <option value="Manizales" selected="selected">Manizales</option>
+            	<option value="Pereira">Pereira</option>
+                <option value="Villavicenci">Villavicencio</option>
+            </select>        
+        </td>
+    </tr>
+    <tr>
+    	<td>Sexo</td>
+        <td>
+        	<ul type="disc">
+            	<li><input type="radio" name="sexo" value="f" checked="checked" />Femenino</li>
+                <li><input type="radio" name="sexo" value="m" />Masculino</li>                
+            </ul> 
+        </td>
+    </tr>
+    <tr>
+    	<td>Gustos</td>
+        <td>
+        	<ul type="square">
+            	<li><input type="checkbox" name="gustos" value="musica" />Música</li>
+                <li><input type="checkbox" name="gustos" value="futbol" />Fútbol</li> 
+                <li><input type="checkbox" name="gustos" value="redes" />Redes Sociales</li>
+                <li><input type="checkbox" name="gustos" value="noticias" />Noticias</li> 
+                <li><input type="checkbox" name="gustos" value="auto" />Automóviles</li>
+                <li><input type="checkbox" name="gustos" value="desarrollo" />Desarrollo Web</li> 
+            </ul>
+        </td>
+    </tr>
+    <tr>
+    	<td>Tu opinión</td>
+        <td>
+        	<textarea cols="20" rows="3"></textarea>
+        </td>
+    </tr>
+    <tr>
+    	<td colspan="2" align="center">
+        	<input type="button" value="Enviar" />
+        </td>
+    </tr>
+</table>
 </body>
 </html>
